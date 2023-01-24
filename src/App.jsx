@@ -1,32 +1,45 @@
-import { useState } from 'react'
+import "primereact/resources/themes/lara-dark-indigo/theme.css";  //theme
+import "primereact/resources/primereact.min.css";                  //core css
+import "primeicons/primeicons.css";                                //icons
+import "primeflex/primeflex.min.css"                                //css
+import { useState, useRef } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+import {InputText} from 'primereact/inputtext'
+import {Button} from 'primereact/button'
+import {Toast} from 'primereact/toast'
 
+function App() {
+  const [text, setText] = useState('')
+  const toastRef = useRef()
+
+  const onButtonClick =  () => {
+     if (text ) {
+      toastRef.current.show({severity: 'info', summary: 'Success', detail: text})
+     } else {
+      toastRef.current.show({severity: 'error', summary: 'Error', detail: 'Value is required'})
+     }
+  } 
   return (
     <div className="App">
+      <Toast ref={toastRef} />
       <div>
-        <a href="https://vitejs.dev" target="_blank">
+        <a href="#">
           <img src="/vite.svg" className="logo" alt="Vite logo" />
         </a>
-        <a href="https://reactjs.org" target="_blank">
+        <a href="#">
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+      {text}
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <span className="p-float-label">
+        <InputText id="input_txt" value={text} onChange={e => setText(e.target.value)} />
+        <label htmlFor="input_txt">Name</label>
+      </span>
+      <Button className="mt-5 " type="button" label="Submit" icon="pi pi-check" onClick={onButtonClick} />
     </div>
   )
 }
