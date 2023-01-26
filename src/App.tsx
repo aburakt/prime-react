@@ -4,7 +4,7 @@ import "primeicons/primeicons.css";
 import "primeflex/primeflex.min.css"
 import reactLogo from './assets/react.svg'
 import Header from "./components/Header";
-import MenuMain from "./components/TabMenu";
+import MainTab from "./components/TabMenu";
 import './App.css'
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
   return (
     <>
       <Header />
-      <MenuMain />
+      <MainTab />
       <div className="App">
         <div>
           <a href="#">
