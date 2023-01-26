@@ -13,7 +13,7 @@ function App() {
     <>
       <Header />
       <MainTab />
-      <div className="App">
+      {/* <div className="App">
         <div>
           <a href="#">
             <img src="/vite.svg" className="logo" alt="Vite logo" />
@@ -23,7 +23,7 @@ function App() {
           </a>
         </div>
         <h1>Appname</h1>
-      </div>
+      </div> */}
     </>
   )
 }
