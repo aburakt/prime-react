@@ -33,7 +33,7 @@ export default function Header() {
                 model={item}
                 start={start}
                 end={end}
-                className="absolute top-0 left-0 px-4 py-3 w-full -font-bold text-4xl" />
+                className="w-full -font-bold text-4xl" />
         </>
     )
 }

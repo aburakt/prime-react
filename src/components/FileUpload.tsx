@@ -51,7 +51,6 @@ export default function UploadTab() {
 			<Tooltip target=".custom-cancel-btn" content="Clear" position="bottom" />
 
 			<div className="card">
-				<h5>Advanced</h5>
 				<FileUpload
 					ref={fileUploadRef}
 					name="demo[]"
@@ -63,6 +62,7 @@ export default function UploadTab() {
 					emptyTemplate={emptyTemplate}
 					onError={onTemplateClear}
 					onClear={onTemplateClear}
+					className="shadow-3"
 				/>
 			</div>
 		</div>
